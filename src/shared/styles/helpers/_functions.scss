@@ -1,0 +1,32 @@
+@use "sass:math";
+//конвертация px в rem
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) * 1rem;
+  } @else {
+    @error 'Не используйте единицы измерения при передачи функции';
+  }
+}
+
+//подсчет плавного изменения текста, в зависимотси от разрешения экрана
+@function fluid($max: 100, $min: 10) {
+  $maxViewportWidth: 1920;
+  $minViewportWidth: 390;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(
+    ($maxSize - $minSize),
+    ($maxWidth - $minWidth)
+  ); //вычисление зависимости увеличение размера шрифта на единицу(rem) разрешения экрана
+  $yAxisIntersection: -$minWidth * $slope + $minSize; //нахождения минимально допустимого значения на оси Y с которго будет производиться рост значения
+
+  @return clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
