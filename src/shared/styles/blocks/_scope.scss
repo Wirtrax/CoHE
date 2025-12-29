@@ -1,6 +1,6 @@
 @use "../helpers" as *;
 
-.w{
+.w {
   position: relative;
 }
 
@@ -37,7 +37,7 @@
     transform: translateY(-50%);
   }
 
-  &__data-score{
+  &__data-score {
     position: relative;
     rotate: -25deg;
     transform: translate(100%, -50%);
@@ -55,47 +55,9 @@
 
   &__circle-point {
     @include abs-center;
-    height: 100%;
-
-    &::before,
-    &::after {
-      content: "";
-      @include abs-center;
-      top: 0;
-      position: absolute;
-      @include circle(rem(6));
-      background-color: var(--color-dark-blue);
-    }
-    &::after {
-      top: 100%;
-    }
-    &:nth-child(1) {
-      
-      transform: rotate(25deg);
-      &::before {
-        display: none;
-      }
-    }
-    &:nth-child(2) {
-      transform: rotate(-25deg);
-    }
-    &:nth-child(3) {
-      transform: rotate(90deg);
-    }
-
-    &:last-child {
-      rotate: 25deg;
-      width: 1px;
-
-      &::after{
-        display: none;
-      }
-      &::before{
-        content: '';
-        @include circle(rem(56));
-        background-color: #F4F5F9 ;
-        border: 1px solid var(--border-accent);
-      }
-    }
+    @include circle(rem(1));
+    border: none;
+    background-color: var(--color-dark-blue);
+    padding: 5px;
   }
 }

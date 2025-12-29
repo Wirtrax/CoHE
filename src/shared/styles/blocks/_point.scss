@@ -1,0 +1,34 @@
+@use "../helpers" as *;
+
+.point {
+  &__number,
+  &__title {
+    display: none;
+    font-weight: 700;
+  }
+
+  &__title {
+    position: absolute;
+    padding-left: rem(20);
+    top: 25%;
+    left: 100%;
+
+    @include fluid-text(20, 14);
+    
+  }
+  &.active {
+    .point__title {
+      display: block;
+    }
+  }
+  &.active,
+  &:hover {
+    @include circle(rem(56));
+    background-color: #f4f5f9;
+    border: 1px solid var(--border-accent);
+
+    .point__number {
+      display: block;
+    }
+  }
+}
