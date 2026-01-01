@@ -1,0 +1,58 @@
+@use "../helpers" as *;
+
+.buttonYear {
+  padding-left: rem(80);
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  @include mobile {
+    padding: 0;
+  }
+
+  &__content {
+    display: flex;
+    gap: rem(10);
+  }
+
+  &__button {
+    @include circle(rem(50));
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      @include circle(rem(25));
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #000000;
+      height: rem(8);
+      width: rem(2);
+
+      @include mobile {
+        height: rem(4);
+        width: rem(1);
+      }
+    }
+
+    &::after {
+      rotate: -45deg;
+      transform: translate(150%);
+    }
+    &::before {
+      rotate: -135deg;
+      transform: translate(-150%);
+    }
+  }
+}
+.prev {
+  transform: rotate(180deg);
+}

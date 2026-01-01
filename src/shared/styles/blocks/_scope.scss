@@ -16,6 +16,10 @@
   border-right: 1px solid var(--border);
   border-left: 1px solid var(--border);
 
+  @include mobile {
+    display: none;
+  }
+
   &::before,
   &::after {
     content: "";
@@ -50,7 +54,6 @@
     height: rem(500);
     border: rem(1) solid var(--border);
     border-radius: 50%;
-    z-index: 2;
   }
 
   &__circle-point {

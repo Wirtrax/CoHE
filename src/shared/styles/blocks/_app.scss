@@ -1,0 +1,32 @@
+@use "../helpers" as *;
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: rem(70);
+  padding-top: rem(120);
+  padding-bottom: rem(104);
+
+  @include mobile {
+    height: 100vh;
+  }
+}
+.historySwitcher {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(30);
+  @include mobile {
+    flex-direction: column-reverse;
+
+    &::after{
+      position: absolute;
+      content: '';
+      width:100%;
+      height: rem(2);
+
+      top:rem(-20);
+      background-color: #c7cdd9be;
+    }
+  }
+}

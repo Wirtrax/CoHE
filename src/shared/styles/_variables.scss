@@ -2,15 +2,15 @@
 
 :root {
   --border: rgba(48, 62, 88, 0.5);
-  
-  --border-accent:#303E58;
+
+  --border-accent: #303e58;
   --color-dark-blue: #42567a;
 
   --color-accent: #5d5fef;
 
   --color-pink: #ef5da8;
 
-  --gradient: var(#3877ee), var(#ef5da8);
+  --gradient: linear-gradient(#3877ee, #ef5da8);
 
   --font-family-base: "PTSans", sans-serif;
 

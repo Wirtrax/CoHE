@@ -4,6 +4,10 @@
 @use "utils";
 @use "globals";
 
-
-@use './blocks/scope';
-@use './blocks/point';
+@use "./blocks/scope";
+@use "./blocks/point";
+@use "./blocks/mainTimeline";
+@use "./blocks/title";
+@use "./blocks/historySlider";
+@use "./blocks/buttonYear";
+@use "./blocks/app";

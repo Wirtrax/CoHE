@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+.Timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(120);
+  @include mobile{
+    gap: rem(35);
+  }
+
+  &__from,
+  &__to {
+    @include fluid-text(200, 56);
+    font-weight: bold;
+
+
+  }
+
+  &__from {
+    color: var(--color-accent);
+  }
+  &__to {
+    color: var(--color-pink);
+  }
+}

@@ -1,0 +1,23 @@
+@use "../helpers" as *;
+
+.title {
+  position: relative;
+  padding-left: rem(80);
+  @include mobile {
+    padding: 0;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    width: rem(5);
+    height: 100%;
+    background: var(--gradient);
+    @include mobile {
+      display: none;
+    }
+  }
+  &__info {
+    @include fluid-text(56, 20);
+  }
+}

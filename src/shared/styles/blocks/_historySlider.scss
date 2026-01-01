@@ -1,0 +1,72 @@
+@use "../helpers" as *;
+
+.historySlider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: rem(40);
+  gap: rem(20);
+  user-select: none;
+
+  @include mobile {
+    padding: 0;
+  }
+
+  &__slideContent {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+
+
+    &-title {
+      color: var(--color-accent);
+      @include fluid-text(25, 16);
+    }
+  }
+
+  &__button {
+    position: relative;
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    min-width: rem(40);
+    min-height: rem(40);
+    box-shadow: 0em 0 0.4em #3877ee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      display: none;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #3877ee;
+      height: rem(8);
+      width: rem(2);
+    }
+
+    &::after {
+      rotate: -45deg;
+      transform: translate(150%);
+    }
+    &::before {
+      rotate: -135deg;
+      transform: translate(-150%);
+    }
+  }
+}
+
+.custom-prev {
+  transform: rotate(180deg);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
